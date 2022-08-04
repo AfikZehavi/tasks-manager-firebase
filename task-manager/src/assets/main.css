@@ -1,0 +1,18 @@
+.task-preview {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.btns-container {
+    display: flex;
+    margin-top: 1rem;
+    gap: 15px;
+}
+
+.tasks-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(0, 150px));
+}
