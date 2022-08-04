@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import home from '../views/home.vue'
 import taskDetails from '../views/task-details.vue'
+import taskEdit from '../views/task-edit.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,12 @@ const router = createRouter({
       name: 'taskDetails',
       component: taskDetails
     },
+    {
+      path: '/task/edit/:id?',
+      name: 'taskEdit',
+      component: taskEdit
+    },
+
   ]
 })
 

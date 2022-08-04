@@ -7,7 +7,7 @@
     </div>
   </header>
 
-  <main>
+  <main v-if="tasks">
     <RouterView />
   </main>
 </template>
@@ -24,8 +24,12 @@ export default {
     this.$store.dispatch({ type: 'loadTasks' })
   },
   methods: {
+
   },
   computed: {
+    tasks() {
+      return this.$store.getters.getTasks
+    }
   },
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
+    <router-link to="/task">back To Task List</router-link>
     <h2>hello afik</h2>
-    <pre>{{ task }}</pre>
+    <pre v-if="task">{{ task }}</pre>
 
 </template>
     
@@ -12,9 +13,7 @@ export default {
         }
     },
 
-    created() {
-        this.task = this.$store.getters.getTaskById('CeTRhqsduWnvv2FK7cAs')
-    },
+
 
 
     watch: {

@@ -16,9 +16,8 @@ const store = createStore({
         getTasks(state) {
             return state.tasks
         },
-        getTaskById: (state) => (id) => {
-            return state.tasks.find(task => task.id === id)
-        }
+        getTaskById: (state) => (id) => state.tasks.find(task => task.id === id),
+
     },
     actions: {
         async loadTasks({ commit }) {
