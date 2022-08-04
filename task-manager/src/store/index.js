@@ -12,6 +12,11 @@ const store = createStore({
             console.log('tasks = ', tasks)
         }
     },
+    getters: {
+        getTasks(state) {
+            return state.tasks 
+        }
+    },
     actions: {
         async loadTasks({ commit }) {
             try {
