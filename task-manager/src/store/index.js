@@ -45,6 +45,15 @@ const store = createStore({
             } catch (err) {
                 console.log('err = ', err)
             }
+        },
+        async deleteTask({ commit }, { task }) {
+            try {
+                await firebaseService.deleteTask(task.id)
+                const tasks = await firebaseService.init()
+                commit({ type: 'setTasks', tasks })
+            } catch (err) {
+                console.log('err = ', err)
+            }
         }
     }
 

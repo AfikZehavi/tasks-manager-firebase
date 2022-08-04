@@ -11,7 +11,7 @@
             <button>
                 <router-link :to="'/task/edit/' + task.id">Edit</router-link>
             </button>
-            <button>Delete</button>
+            <button @click="$emit('deleteTask', task)">Delete</button>
         </div>
     </div>
 </template>
@@ -35,7 +35,6 @@ export default {
         }
     },
     created() {
-        console.log('task = ', this.task)
     }
 }
 </script>

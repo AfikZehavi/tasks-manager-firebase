@@ -4,7 +4,7 @@
         <h1>Tasks: </h1>
         <div class="tasks-container">
             <article v-for="task in tasks">
-                <task-preview :task="task" />
+                <task-preview :task="task" @deleteTask="deleteTask" />
             </article>
         </div>
     </div>
@@ -26,6 +26,9 @@ export default {
         },
     },
     methods: {
+        deleteTask(task) {
+            this.$store.dispatch({ type: 'deleteTask', task })
+        }
     },
 }
 </script>
