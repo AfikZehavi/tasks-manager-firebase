@@ -34,17 +34,7 @@ async function init() {
 
   return tasks
 }
-const updatedTask = {
-  createdAt: Date.now(),
-  description: "Finish school project",
-  doneAt: null,
-  id: "CeTRhqsduWnvv2FK7cAs",
-  importance: 1,
-  status: "Not done",
-  title: "hello update",
-}
 
-updateTask(updatedTask)
 async function updateTask(task) {
   const docRef = doc(db, 'tasks', task.id)
   const docSnap = await getDoc(docRef)

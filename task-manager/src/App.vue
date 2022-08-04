@@ -33,3 +33,11 @@ export default {
   },
 }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&display=swap');
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+</style>
