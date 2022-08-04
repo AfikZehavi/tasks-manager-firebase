@@ -31,7 +31,6 @@ export default {
                 importance: 0,
                 status: "not Done",
                 title: ''
-
             }
         }
     }

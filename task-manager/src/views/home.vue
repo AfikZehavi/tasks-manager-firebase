@@ -1,4 +1,5 @@
 <template>
+    <router-link to="/task/edit">Add task</router-link>
     <div>
         <h1>Tasks: </h1>
         <div class="tasks-container">

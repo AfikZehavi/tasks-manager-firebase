@@ -1,6 +1,6 @@
 <template>
     <div class="task-preview">
-        {{ task.title }}
+        <h2>{{ task.title }}</h2>
         <span>Description: </span>
         {{ task.description }}
         <span>Created at: {{ createdTime }}</span>
@@ -8,7 +8,9 @@
         <span>Status: {{ task.status }}</span>
 
         <div class="btns-container">
-            <button>Edit</button>
+            <button>
+                <router-link :to="'/task/edit/' + task.id">Edit</router-link>
+            </button>
             <button>Delete</button>
         </div>
     </div>
@@ -18,7 +20,7 @@
 export default {
     data() {
         return {
-            createdTime: this.normalDate(this.task.createdAt.seconds)
+            createdTime: this.normalDate(this.task.createdAt)
         }
     },
     props: {

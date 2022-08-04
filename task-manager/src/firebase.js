@@ -1,8 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, deleteDoc, getDoc } from 'firebase/firestore'
 
 export const firebaseService = {
   init,
+  addTask,
+  deleteTask,
 }
 const firebaseConfig = {
   apiKey: "AIzaSyB561FTqhehgnLKTIDLZrUKQemhyN3dM2Q",
@@ -31,4 +33,32 @@ async function init() {
   })
 
   return tasks
+}
+const updatedTask = {
+  createdAt: Date.now(),
+  description: "Finish school project",
+  doneAt: null,
+  id: "CeTRhqsduWnvv2FK7cAs",
+  importance: 1,
+  status: "Not done",
+  title: "hello update",
+}
+
+updateTask(updatedTask)
+async function updateTask(task) {
+  const docRef = doc(db, 'tasks', task.id)
+  const docSnap = await getDoc(docRef)
+  await updateDoc(docRef, {
+    ...docSnap.data(),
+    ...task
+  })
+}
+
+async function deleteTask(id) {
+  const docRef = doc(db, "tasks", id)
+  await deleteDoc(docRef)
+}
+
+async function addTask(task) {
+  await addDoc(colRef, task)
 }
