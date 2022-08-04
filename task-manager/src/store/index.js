@@ -27,8 +27,27 @@ const store = createStore({
             } catch (err) {
                 console.log('err = ', err)
             }
+        },
+        async updateTask({ commit }, { task }) {
+            try {
+                await firebaseService.updateTask(task)
+                const tasks = await firebaseService.init()
+                commit({ type: 'setTasks', tasks })
+            } catch (err) {
+                console.log('err = ', err)
+            }
+        },
+        async createNewTask({ commit }, { task }) {
+            try {
+                await firebaseService.addTask(task)
+                const tasks = await firebaseService.init()
+                commit({ type: 'setTasks', tasks })
+            } catch (err) {
+                console.log('err = ', err)
+            }
         }
     }
+
 })
 
 export default store

@@ -5,6 +5,7 @@ export const firebaseService = {
   init,
   addTask,
   deleteTask,
+  updateTask
 }
 const firebaseConfig = {
   apiKey: "AIzaSyB561FTqhehgnLKTIDLZrUKQemhyN3dM2Q",

@@ -26,8 +26,8 @@
                         <el-radio label="2">Not so importent</el-radio>
                     </el-radio-group>
                 </el-form-item>
-                <el-button class="formbtn" v-if="newTask">Create task</el-button>
-                <el-button class="formbtn" v-else>Update task</el-button>
+                <el-button @click="updateTask" class="formbtn" v-if="newTask">Create task</el-button>
+                <el-button @click="updateTask" class="formbtn" v-else>Update task</el-button>
             </el-form>
 
         </main>
@@ -66,6 +66,7 @@ export default {
         updateTask() {
             if (this.newTask) this.$store.dispatch({ type: 'createNewTask', task: this.taskToEdit })
             else this.$store.dispatch({ type: 'updateTask', task: this.taskToEdit })
+            this.$router.push('/')
         }
     }
 
