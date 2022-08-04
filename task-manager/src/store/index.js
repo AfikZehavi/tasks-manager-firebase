@@ -14,7 +14,10 @@ const store = createStore({
     },
     getters: {
         getTasks(state) {
-            return state.tasks 
+            return state.tasks
+        },
+        getTaskById: (state) => (id) => {
+            return state.tasks.find(task => task.id === id)
         }
     },
     actions: {

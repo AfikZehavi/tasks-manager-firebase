@@ -3,6 +3,7 @@
 <template>
   <header>
     <div class="wrapper">
+      <router-link to="/task/CeTRhqsduWnvv2FK7cAs">to test Task</router-link>
     </div>
   </header>
 
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+
 
 export default {
   data() {
